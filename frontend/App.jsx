@@ -8,9 +8,9 @@ import ConsultaCrypto from './components/ConsultaCrypto';
 import VerificadorTareas from './components/VerificadorTareas';
 import * as calculator from '../.dfx/local/canisters/calculator';
 import * as homework from '../.dfx/local/canisters/homework';
-import * as motocoin from '../.dfx/local/canisters/motocoin';
-import * as wall from '../.dfx/local/canisters/wall';
-import * as verifier from '../.dfx/local/canisters/verifier';
+// import * as motocoin from '../.dfx/local/canisters/motocoin';
+// import * as wall from '../.dfx/local/canisters/wall';
+// import * as verifier from '../.dfx/local/canisters/verifier';
 
 /*
  * Connect2ic provides essential utilities for IC app development
@@ -22,12 +22,11 @@ import "@connect2ic/core/style.css"
 /*
  * Import canister definitions like this:
  */
-import * as counter from "../.dfx/local/canisters/counter"
 /*
  * Some examples to get you started
  */
 
-import Layout from './pages/Dashboard';
+import Layout from './layouts/MainLayout';
 import { BrowserRouter } from "react-router-dom"
 import Dashboard from "./pages/Dashboard";
 
@@ -63,9 +62,9 @@ const client = createClient({
   canisters: {
     calculator,
     homework,
-    motocoin,
-    wall,
-    verifier,
+    // motocoin,
+    // wall,
+    // verifier,
   },
   providers: defaultProviders,
   globalProviderConfig: {

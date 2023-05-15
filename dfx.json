@@ -8,25 +8,11 @@
       "main": "canisters/homework/homework.mo",
       "type": "motoko"
     },
-    "verifier": {
-      "main": "canisters/verifier/verifier.mo",
-      "type": "motoko"
-    },
-    "wall": {
-      "main": "canisters/wall/wall.mo",
-      "type": "motoko"
-    },
-    "motocoin": {
-      "main": "canisters/motocoin/motocoin.mo",
-      "type": "motoko"
-    },
+
     "assets": {
       "dependencies": [
         "calculator",
-        "homework",
-        "verifier",
-        "wall",
-        "motocoin"
+        "homework"
       ],
       "frontend": {
         "entrypoint": "dist/index.html"
