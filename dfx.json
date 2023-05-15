@@ -1,0 +1,58 @@
+{
+  "canisters": {
+    "calculator": {
+      "main": "canisters/calculator/calculator.mo",
+      "type": "motoko"
+    },
+    "homework": {
+      "main": "canisters/homework/homework.mo",
+      "type": "motoko"
+    },
+    "verifier": {
+      "main": "canisters/verifier/verifier.mo",
+      "type": "motoko"
+    },
+    "wall": {
+      "main": "canisters/wall/wall.mo",
+      "type": "motoko"
+    },
+    "motocoin": {
+      "main": "canisters/motocoin/motocoin.mo",
+      "type": "motoko"
+    },
+    "assets": {
+      "dependencies": [
+        "calculator",
+        "homework",
+        "verifier",
+        "wall",
+        "motocoin"
+      ],
+      "frontend": {
+        "entrypoint": "dist/index.html"
+      },
+      "source": [
+        "dist/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": [
+        "https://mainnet.dfinity.network"
+      ],
+      "type": "persistent"
+    }
+  },
+  "version": 1
+}

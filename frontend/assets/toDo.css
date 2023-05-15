@@ -1,0 +1,158 @@
+/* Estilos de la lista de tareas */
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list li span {
+    flex: 1;
+    font-size: 16px;
+}
+
+.todo-list li button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list li button:hover {
+    background-color: #c0392b;
+}
+
+.todo-list li.completed {
+    background-color: #ecf0f1;
+    text-decoration: line-through;
+    color: #95a5a6;
+}
+
+.todo-list li.completed button {
+    background-color: #95a5a6;
+}
+
+.todo-list input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.todo-list button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.todo-list .search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.todo-list li button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list li button:hover {
+    background-color: #2980b9;
+}
+
+.todo-list li.completed button {
+    background-color: #95a5a6;
+}
+
+.todo-list input[type="text"],
+.todo-list button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.todo-list input[type="text"]:focus,
+.todo-list button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.btns-get {
+    display: flex;
+    gap: 1rem;
+}
+
+.add-button {
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+}
+
+.add-button:hover {
+    background-color: #219653;
+}
+
+.get-all-button {
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.get-all-button:hover {
+    background-color: #219653;
+}
+
+.get-pending-button {
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.get-pending-button:hover {
+    background-color: #d35400;
+}
