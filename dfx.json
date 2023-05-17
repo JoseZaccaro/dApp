@@ -26,7 +26,8 @@
   "defaults": {
     "build": {
       "packtool": ""
-    }
+    },
+    "prebuild":"node setupEnv.js"
   },
   "networks": {
     "local": {

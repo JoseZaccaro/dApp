@@ -46,7 +46,7 @@ const aliases = Object.entries(dfxJson.canisters).reduce(
 const canisterDefinitions = Object.entries(canisterIds).reduce(
   (acc, [key, val]) => ({
     ...acc,
-    [`process.env.${key.toUpperCase()}_CANISTER_ID`]: isDev
+    [`process.env.CANISTER_ID_${key.toUpperCase()}`]: isDev
       ? JSON.stringify(val.local)
       : JSON.stringify(val.ic),
   }),

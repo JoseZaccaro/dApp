@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useCanister } from "@connect2ic/react"
+// import { useCanister } from "@connect2ic/react"
 import '../assets/calculator.css'
+import {calculator as calcActor} from '../../src/declarations/calculator/index.js';
 
 const Calculadora = () => {
   // const buttonsContainer = document.getElementById('buttons-container');
-  const [calcActor, canister] = useCanister("calculator")
+  // const [calcActor, canister] = useCanister("calculator")
 
   const input = useRef();
   const resultado = useRef();
@@ -25,13 +26,14 @@ const Calculadora = () => {
     // })
   }, [])
 
-  if (canister.loading) return <p>"Loading..."</p>;
+  console.log(calcActor);
+  // if (canister.loading) return <p>"Loading..."</p>;
 
   const operaciones = [{ 'add': calcActor.add }, { 'sub': calcActor.sub }, { 'mul': calcActor.mul }, { 'div': calcActor.div }, { '^': calcActor.power }, { '√': calcActor.sqrt }];
   const numeros = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
 
   function crearBoton(texto, onClick, i) {
-    return (<button key={i} onClick={() => onClick(texto)}>{typeof texto == 'object' ? Object.keys(texto)[0] : texto}</button>)
+    return (<button key={i} onClick={() => onClick(parseFloat(texto))}>{typeof texto == 'object' ? Object.keys(texto)[0] : texto}</button>)
   }
 
   async function agregarOperador(operador) {
@@ -84,7 +86,8 @@ const Calculadora = () => {
           <input type="text" id="pre-result" defaultValue="0" disabled ref={input} />
         </label>
         <div className="buttons" id="buttons-container">
-          {operaciones.map((op, i) => crearBoton(op, agregarOperador, i))}
+          {operaciones.map((op, i) => crearBoton(op, ()=>agregarOperador(op), i))}
+          <button onClick={() => calcActor.add(parseFloat(5))}>+5</button>
           {numeros.map((num, i) => crearBoton(num, agregarAlResultado, i))}
           {botonesEspeciales.map((btn, i) => crearBoton(btn.etiqueta, btn.accion, i))}
         </div>

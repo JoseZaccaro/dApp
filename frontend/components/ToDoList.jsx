@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useCanister } from "@connect2ic/react"
 import '../assets/toDo.css'
-
+import { homework as homeworkActor } from '../../src/declarations/homework/index.js'
 const ToDoList = () => {
   // Estado para almacenar la lista de tareas
   const [todos, setTodos] = useState([]);
   // Estado para almacenar el valor del input
   const [newTodo, setNewTodo] = useState('');
 
-  const [homeworkActor] = useCanister("homework")
+  // const [homeworkActor] = useCanister("homework")
   // Función para obtener todas las tareas
   const getAllHomework = async () => {
     const all = await homeworkActor.getAllHomework()
